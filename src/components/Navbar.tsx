@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Volume2, VolumeX, Menu, X, Globe, Sparkles, ChevronRight } from 'lucide-react';
+import { ShoppingBag, Volume2, VolumeX, Menu, X, Globe } from 'lucide-react';
 import { soundscape } from '../utils/soundscape';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -40,29 +40,6 @@ export const Navbar: React.FC<NavbarProps> = ({ cartCount, onOpenCart, onNavigat
 
   return (
     <>
-      {/* Top Luxury Announcement Bar with AnimatePresence */}
-      <motion.div 
-        animate={{ height: scrolled ? 0 : 'auto', opacity: scrolled ? 0 : 1 }}
-        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        className="bg-forest-900 border-b border-forest-800/60 text-xs px-4 text-center tracking-widest text-ivory-200/90 font-sans flex items-center justify-center gap-3 relative z-50 overflow-hidden"
-      >
-        <div className="py-2 flex items-center justify-center gap-3">
-          <span className="hidden md:inline-flex items-center gap-1.5 text-gold-400 font-medium">
-            <Sparkles className="w-3.5 h-3.5" />
-            SINGLE-ESTATE PURITY
-          </span>
-          <span className="text-ivory-300">
-            Complimentary Worldwide Express Delivery on orders over $75 · Harvested at Pedro & Dimbula Estates
-          </span>
-          <button 
-            onClick={() => onNavigate('collection')}
-            className="hidden sm:inline-flex items-center gap-1 text-gold-400 hover:text-gold-300 underline underline-offset-2 ml-1"
-          >
-            Acquire Now <ChevronRight className="w-3 h-3" />
-          </button>
-        </div>
-      </motion.div>
-
       {/* Main Luxury Navigation Bar */}
       <motion.header
         animate={{
@@ -74,7 +51,6 @@ export const Navbar: React.FC<NavbarProps> = ({ cartCount, onOpenCart, onNavigat
         }}
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-0 left-0 right-0 z-40 border-b shadow-2xl transition-all"
-        style={{ marginTop: scrolled ? 0 : undefined }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
